@@ -81,6 +81,9 @@ fn edit_dependencies(cargo_toml: &mut DocumentMut, table_path: &str, args: &Args
     else {
         return;
     };
+    if deps.is_none() {
+        return;
+    }
     let deps = deps.as_table_mut().unwrap();
 
     for (_, dep) in deps.iter_mut().filter(|(key, _)| args.dep.owns(key)) {
