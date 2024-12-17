@@ -28,6 +28,8 @@ enum DepName {
     Cairo,
     #[value(name = "cairols")]
     CairoLS,
+    #[value(name = "cairolint")]
+    CairoLint,
 }
 
 #[derive(clap::Args, Clone, Default)]
@@ -184,6 +186,7 @@ impl Args {
                     .collect()
             }),
             DepName::CairoLS => &["cairo-language-server"],
+            DepName::CairoLint => &["cairo-lint"],
         }
     }
 
@@ -195,6 +198,7 @@ impl Args {
         match self.dep {
             DepName::Cairo => "https://github.com/starkware-libs/cairo",
             DepName::CairoLS => "https://github.com/software-mansion/cairols",
+            DepName::CairoLint => "https://github.com/software-mansion/cairo-lint",
         }
     }
 }
