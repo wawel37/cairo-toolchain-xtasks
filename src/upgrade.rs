@@ -186,7 +186,7 @@ impl Args {
                     .collect()
             }),
             DepName::CairoLS => &["cairo-language-server"],
-            DepName::CairoLint => &["cairo-lint"],
+            DepName::CairoLint => &["cairo-lint-core"],
         }
     }
 
